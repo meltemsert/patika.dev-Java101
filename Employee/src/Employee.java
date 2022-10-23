@@ -1,14 +1,52 @@
 public class Employee {
+    private String employeeName ;
+    private double employeeSalary  ;
+    private int employeeWorkHours ;
+    private int employeeHireYear ;
 
+    public Employee() {
 
-    public String employeeName = "Meltem SERT";
-    public double employeeSalary =2000.00 ;
-    public int employeeWorkHours = 45;
-    public int employeeHireYear = 1985;
+    }
 
-     double withTaxAndBonus = employeeSalary - tax(employeeSalary) + bonus(employeeWorkHours);
+    public Employee(String employeeName,double employeeSalary,int employeeWorkHours,int employeeHireYear) {
+        this.employeeName = employeeName;
+        this.employeeSalary= employeeSalary;
+        this.employeeWorkHours=employeeWorkHours;
+        this.employeeHireYear=employeeHireYear;
+    }
 
-     double totalSalary = withTaxAndBonus+raiseSalary(employeeSalary,employeeHireYear);
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    public double getEmployeeSalary() {
+        return employeeSalary;
+    }
+
+    public void setEmployeeSalary(double employeeSalary) {
+        this.employeeSalary = employeeSalary;
+    }
+
+    public int getEmployeeWorkHours() {
+        return employeeWorkHours;
+    }
+
+    public void setEmployeeWorkHours(int employeeWorkHours) {
+        this.employeeWorkHours = employeeWorkHours;
+    }
+
+    public int getEmployeeHireYear() {
+        return employeeHireYear;
+    }
+
+    public void setEmployeeHireYear(int employeeHireYear) {
+        this.employeeHireYear = employeeHireYear;
+    }
+
     public static double tax(double employeeSalary) {
         if (employeeSalary < 1000) {
             return 0;
@@ -46,10 +84,10 @@ public class Employee {
         System.out.println("Employee is workhours : " + employeeWorkHours);
         System.out.println("Employee is hireyear : " + employeeHireYear);
         System.out.println("Tax on employee salary : " + tax(employeeSalary));
-        System.out.println("Bonus on employee workhuors : " + bonus(employeeWorkHours));
+        System.out.println("Bonus on employee workhours : " + bonus(employeeWorkHours));
         System.out.println("RaiseSalary on employee hireyear : " + raiseSalary(employeeSalary, employeeHireYear));
-        System.out.println("Employee is salary calculated with tax and bonus: " + withTaxAndBonus);
-        System.out.println("Employee is total Salary : " + totalSalary);
+        System.out.println("Employee is salary calculated with tax and bonus: " + (employeeSalary - tax(employeeSalary) + bonus(employeeWorkHours)));
+        System.out.println("Employee is total Salary : " + (employeeSalary - tax(employeeSalary) + bonus(employeeWorkHours)+raiseSalary(employeeSalary,employeeHireYear)));
 
 
         return null;

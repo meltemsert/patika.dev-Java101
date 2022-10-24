@@ -47,7 +47,7 @@ public class Employee {
         this.employeeHireYear = employeeHireYear;
     }
 
-    public static double tax(double employeeSalary) {
+    public double tax(double employeeSalary) {
         if (employeeSalary < 1000) {
             return 0;
         } else if (employeeSalary > 1000) {
@@ -57,7 +57,7 @@ public class Employee {
         return 0;
     }
 
-    public static double bonus(int employeeWorkHours) {
+    public double bonus(int employeeWorkHours) {
         if (employeeWorkHours > 40) {
             return (employeeWorkHours - 40) * 30;
         }
